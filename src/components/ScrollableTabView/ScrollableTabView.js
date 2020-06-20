@@ -81,7 +81,7 @@ class ScrollableTabView extends React.Component {
 
     return (
       isHeaderFolded &&
-      scrollRef.scrollTo({
+      scrollRef.getNode().scrollTo({
         y: scrollHeight,
         duration: 1000
       })
