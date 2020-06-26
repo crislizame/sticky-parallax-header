@@ -110,7 +110,7 @@ export default class TabbedHeader extends React.Component {
 
       if(foregroundImage !== null){
         return (
-          <Animated.View style={{ opacity: imageOpacity }}>
+          <Animated.View style={{ opacity: imageOpacity,justifyContent:"center" }}>
             <Animated.Image
               source={logo}
               style={[styles.profilePic, { width: imageSize, height: imageSize }]}
@@ -121,7 +121,7 @@ export default class TabbedHeader extends React.Component {
     }
 
     return (
-      <View style={styles.foreground}>
+      <View style={styles.foreground,{flexDirection:"row",justifyContent:"center"}}>
         {renderImage()}
         <Animated.View style={[styles.messageContainer, { opacity: titleOpacity }]}>
           <Text style={messageStyle}>{title}</Text>
