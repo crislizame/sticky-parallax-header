@@ -8,7 +8,7 @@ export default StyleSheet.create({
     width: 142
   },
   tabsWrapper: {
-    paddingVertical: 12
+    paddingVertical: 12,
   },
   tabTextContainerStyle: {
     backgroundColor: colors.transparent,
