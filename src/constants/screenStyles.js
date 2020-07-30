@@ -55,7 +55,7 @@ const screenStyles = StyleSheet.create({
     letterSpacing: -1
   },
   messageContainer: {
-    paddingTop: 24,
+    paddingLeft: 40,
     paddingBottom: 24
   },
   profilePic: {
