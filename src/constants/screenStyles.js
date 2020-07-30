@@ -55,12 +55,13 @@ const screenStyles = StyleSheet.create({
     letterSpacing: -1
   },
   messageContainer: {
+
     paddingLeft: 40,
     paddingBottom: 24
   },
   profilePic: {
     width: constants.responsiveWidth(18),
-    height: constants.responsiveWidth(18),
+    height: constants.responsiveWidth(19),
     borderRadius: constants.responsiveWidth(4.5)
   },
   foregroundText: {
