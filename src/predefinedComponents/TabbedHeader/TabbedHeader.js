@@ -5,7 +5,7 @@ import {
   Image,
   StatusBar,
   Animated,
-  ViewPropTypes
+  ViewPropTypes, Platform
 } from 'react-native'
 import {
   arrayOf,
@@ -20,6 +20,7 @@ import { constants, colors, sizes } from '../../constants'
 import styles from './TabbedHeader.styles'
 import RenderContent from './defaultProps/defaultProps'
 import isUndefined from 'lodash/isUndefined'
+import {ifIphoneX} from "react-native-sticky-parallax-header/src/utils";
 
 const { event, ValueXY } = Animated
 export default class TabbedHeader extends React.Component {
@@ -110,7 +111,7 @@ export default class TabbedHeader extends React.Component {
 
       if(foregroundImage !== null){
         return (
-          <Animated.View style={{ opacity: imageOpacity,justifyContent:"center",paddingLeft:50,paddingTop:68}}>
+          <Animated.View style={{ opacity: imageOpacity,justifyContent:"center",paddingLeft:50,paddingTop:Platform.select({ ios: ifIphoneX(constants.responsiveWidth(18), constants.responsiveWidth(14)), android: constants.responsiveWidth(14) })}}>
             <Animated.Image
               source={logo}
               style={[styles.profilePic, { width: imageSize, height: imageSize }]}
@@ -194,7 +195,7 @@ export default class TabbedHeader extends React.Component {
           tabTextActiveStyle={tabTextActiveStyle}
           tabTextContainerStyle={tabTextContainerStyle}
           tabTextContainerActiveStyle={tabTextContainerActiveStyle}
-          // tabsContainerBackgroundColor={backgroundColor}
+          tabsContainerBackgroundColor={backgroundColor}
           tabWrapperStyle={tabWrapperStyle}
           backgroundImage={backgroundImage}
           bounces={bounces}
