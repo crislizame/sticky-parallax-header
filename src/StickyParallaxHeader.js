@@ -374,7 +374,6 @@ class StickyParallaxHeader extends Component {
                 <View
                   tabLabel={item.title}
                   key={item.title}
-                  style={{marginTop:40}}
                   onLayout={this.setContentHeight}
                   ref={(c) => {
                     this.tab = c
