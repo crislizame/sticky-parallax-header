@@ -56,8 +56,9 @@ const screenStyles = StyleSheet.create({
   },
   messageContainer: {
 
-    paddingLeft: 40,
-    paddingBottom: 24
+    paddingLeft: 10,
+    justifyContent:"center",
+    // paddingBottom: 24
   },
   profilePic: {
     width: constants.responsiveWidth(18),
