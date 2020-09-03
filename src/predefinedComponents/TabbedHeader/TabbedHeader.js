@@ -111,7 +111,7 @@ export default class TabbedHeader extends React.Component {
 
       if(foregroundImage !== null){
         return (
-          <Animated.View style={{ opacity: imageOpacity,justifyContent:"center",paddingLeft:50,paddingTop:Platform.select({ ios: ifIphoneX(constants.responsiveWidth(18), constants.responsiveWidth(14)), android: constants.responsiveWidth(14) })}}>
+          <Animated.View style={{ opacity: imageOpacity,justifyContent:"center",paddingTop:Platform.select({ ios: ifIphoneX(constants.responsiveWidth(18), constants.responsiveWidth(12)), android: constants.responsiveWidth(12) })}}>
             <Animated.Image
               source={logo}
               style={[styles.profilePic, { width: imageSize, height: imageSize }]}
@@ -122,10 +122,10 @@ export default class TabbedHeader extends React.Component {
     }
 
     return (
-      <View style={styles.foreground,{flexDirection:"column",justifyContent:"center"}}>
+      <View style={styles.foreground,{flexDirection:"row",justifyContent:"center",width:constants.responsiveWidth(100)}}>
         {renderImage()}
-        <Animated.View style={[styles.messageContainer, { opacity: titleOpacity }]}>
-          <Text style={messageStyle}>{title}</Text>
+        <Animated.View style={[styles.messageContainer, { opacity: titleOpacity ,paddingTop:Platform.select({ ios: ifIphoneX(constants.responsiveWidth(18), constants.responsiveWidth(12)), android: constants.responsiveWidth(12)})}]}>
+          <View style={messageStyle}>{title}</View>
         </Animated.View>
       </View>
     )
